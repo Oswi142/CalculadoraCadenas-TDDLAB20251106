@@ -1,0 +1,21 @@
+[
+  {
+    "sha": "HEAD",
+    "author": "Israel Antezana Rojas",
+    "commit": {
+      "date": "2025-11-06T19:00:04.000Z",
+      "message": "Inicial",
+      "url": "https://github.com/UCB-IngSoftware/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+    },
+    "stats": {
+      "total": 10,
+      "additions": 10,
+      "deletions": 0,
+      "date": "2025-11-06"
+    },
+    "coverage": 100,
+    "test_count": 1,
+    "failed_tests": 0,
+    "conclusion": "success"
+  }
+]
