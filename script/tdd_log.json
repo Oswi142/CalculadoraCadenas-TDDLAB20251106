@@ -60,9 +60,55 @@
     "testId": 2
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e6a567b82fd326683d07258a59b7df1969453959",
     "commitName": "refact: extrae logica de negocio de pruebas",
     "commitTimestamp": 1762458559453,
     "testId": 2
+  },
+  {
+    "numPassedTests": 2,
+    "failedTests": 0,
+    "numTotalTests": 2,
+    "timestamp": 1762516542772,
+    "success": true,
+    "testId": 3
+  },
+  {
+    "numPassedTests": 2,
+    "failedTests": 1,
+    "numTotalTests": 3,
+    "timestamp": 1762516656865,
+    "success": false,
+    "testId": 3
+  },
+  {
+    "numPassedTests": 2,
+    "failedTests": 1,
+    "numTotalTests": 3,
+    "timestamp": 1762516803302,
+    "success": false,
+    "testId": 3
+  },
+  {
+    "numPassedTests": 3,
+    "failedTests": 0,
+    "numTotalTests": 3,
+    "timestamp": 1762516833227,
+    "success": true,
+    "testId": 3
+  },
+  {
+    "numPassedTests": 3,
+    "failedTests": 0,
+    "numTotalTests": 3,
+    "timestamp": 1762517299637,
+    "success": true,
+    "testId": 3
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: suma cadena de un numero cualquiera",
+    "commitTimestamp": 1762517336084,
+    "testId": 3
   }
 ]

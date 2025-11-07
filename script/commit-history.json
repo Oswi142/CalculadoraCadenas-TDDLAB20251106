@@ -38,12 +38,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "e6a567b82fd326683d07258a59b7df1969453959",
     "author": "Israel Antezana Rojas",
     "commit": {
       "date": "2025-11-06T19:49:19.000Z",
       "message": "refact: extrae logica de negocio de pruebas",
-      "url": "https://github.com/UCB-IngSoftware/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+      "url": "https://github.com/UCB-IngSoftware/CalculadoraCadenas-TDDLAB20251106/commit/e6a567b82fd326683d07258a59b7df1969453959"
     },
     "stats": {
       "total": 25,
@@ -53,6 +53,25 @@
     },
     "coverage": 100,
     "test_count": 2,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Israel Antezana Rojas",
+    "commit": {
+      "date": "2025-11-07T12:08:55.000Z",
+      "message": "feat: suma cadena de un numero cualquiera",
+      "url": "https://github.com/UCB-IngSoftware/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+    },
+    "stats": {
+      "total": 49,
+      "additions": 48,
+      "deletions": 1,
+      "date": "2025-11-07"
+    },
+    "coverage": 100,
+    "test_count": 3,
     "failed_tests": 0,
     "conclusion": "success"
   }

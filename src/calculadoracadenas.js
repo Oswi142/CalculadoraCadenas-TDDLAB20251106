@@ -1,3 +1,6 @@
 export default function sumarCadena(cadena) {
-  return 0;
+  if (cadena === "") {
+    return 0;
+  }
+  return parseInt(cadena);
 }
