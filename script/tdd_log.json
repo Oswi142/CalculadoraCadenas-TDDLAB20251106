@@ -216,9 +216,23 @@
     "testId": 7
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a826421dfbecdf9984681072299e801a2376d2f1",
     "commitName": "Added new functionality to the tddScript",
     "commitTimestamp": 1763005544096,
     "testId": 8
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763005818199,
+    "success": true,
+    "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test-2 tests",
+    "commitTimestamp": 1763005839303,
+    "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b"
   }
 ]
