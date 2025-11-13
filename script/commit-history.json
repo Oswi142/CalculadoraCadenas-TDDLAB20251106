@@ -133,18 +133,37 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "0d4dc353474d8f69298b5005e97010ea95f6a2f6",
     "author": "Israel Antezana Rojas",
     "commit": {
       "date": "2025-11-07T12:51:56.000Z",
       "message": "feat: ignora numeros mayores a 1000 en la suma",
-      "url": "https://github.com/UCB-IngSoftware/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+      "url": "https://github.com/UCB-IngSoftware/CalculadoraCadenas-TDDLAB20251106/commit/0d4dc353474d8f69298b5005e97010ea95f6a2f6"
     },
     "stats": {
       "total": 8,
       "additions": 7,
       "deletions": 1,
       "date": "2025-11-07"
+    },
+    "coverage": 100,
+    "test_count": 6,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Oswi",
+    "commit": {
+      "date": "2025-11-13T03:45:40.000Z",
+      "message": "Added new functionality to the tddScript",
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+    },
+    "stats": {
+      "total": 76,
+      "additions": 54,
+      "deletions": 22,
+      "date": "2025-11-13"
     },
     "coverage": 100,
     "test_count": 6,

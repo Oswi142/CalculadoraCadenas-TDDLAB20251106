@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url';
 import fs from 'fs';
 import path from 'path';
 import { spawn } from 'cross-spawn';
-import { getLastTestId } from './id_execution_tests_commit.js';
+import { v4 as uuid } from 'uuid';
 
 const COMMAND = 'jest';
 const args = ['--json', '--outputFile=./script/report.json'];
@@ -40,11 +40,11 @@ const extractAndAddObject = async (reportFile, tddLogFile) => {
 
     const jsonData = readJSONFile(reportFile);
     const passedTests = jsonData.numPassedTests;
-    const failedTests = jsonData.numFailedTests; 
+    const failedTests = jsonData.numFailedTests;
     const totalTests = jsonData.numTotalTests;
     const startTime = jsonData.startTime;
     const success = jsonData.success;
-    let testId = getLastTestId(tddLogFile);
+    const testId = uuid();
 
     const newReport = {
       numPassedTests: passedTests,
@@ -60,7 +60,7 @@ const extractAndAddObject = async (reportFile, tddLogFile) => {
 
     writeJSONFile(tddLogFile, tddLog);
   } catch (error) {
-    console.error("Error en la ejecución:", error);
+    console.error('Error en la ejecución:', error);
   }
 };
 
