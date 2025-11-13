@@ -152,17 +152,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a826421dfbecdf9984681072299e801a2376d2f1",
     "author": "Oswi",
     "commit": {
       "date": "2025-11-13T03:45:40.000Z",
       "message": "Added new functionality to the tddScript",
-      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/a826421dfbecdf9984681072299e801a2376d2f1"
     },
     "stats": {
       "total": 76,
       "additions": 54,
       "deletions": 22,
+      "date": "2025-11-13"
+    },
+    "coverage": 100,
+    "test_count": 6,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Oswi",
+    "commit": {
+      "date": "2025-11-13T03:48:11.000Z",
+      "message": "test-1 tests",
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
       "date": "2025-11-13"
     },
     "coverage": 100,
