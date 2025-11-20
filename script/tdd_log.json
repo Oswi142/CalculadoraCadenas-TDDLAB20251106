@@ -230,9 +230,23 @@
     "testId": "695f3f37-38f1-4e67-b15e-e64c3bdc49dd"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "f004474f9303be8004829a5f3b0b0eb7b0e056c0",
     "commitName": "test-1 tests",
     "commitTimestamp": 1763005692577,
-    "testId": "695f3f37-38f1-4e67-b15e-e64c3bdc49dd"
+    "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b",
+    "timestamp": 1763005818199,
+    "success": true
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test-2 tests",
+    "commitTimestamp": 1763005839303,
+    "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "tddlog no conflicts, commit history needs the implementation",
+    "commitTimestamp": 1763638662815,
+    "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b1"
   }
 ]
