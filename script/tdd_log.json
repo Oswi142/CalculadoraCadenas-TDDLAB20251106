@@ -244,7 +244,7 @@
     "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5b831d044f9ea020306e8b4ac80350f01b37f68d",
     "commitName": "tddlog no conflicts, commit history needs the implementation",
     "commitTimestamp": 1763638662815,
     "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b1"
@@ -254,5 +254,19 @@
     "commitName": "cambios en attributes",
     "commitTimestamp": 1763841751565,
     "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b11"
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763842054125,
+    "success": true,
+    "testId": "496a9dd2-8b45-4caf-9901-e8bde89224ae"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "branch 2 tests",
+    "commitTimestamp": 1763842079481,
+    "testId": "496a9dd2-8b45-4caf-9901-e8bde89224ae"
   }
 ]
