@@ -238,7 +238,7 @@
     "success": true
   },
   {
-    "commitId": "HEAD",
+    "commitId": "b8a42f874ef0b60435e1088562618eed388bd994",
     "commitName": "test-2 tests",
     "commitTimestamp": 1763005839303,
     "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b"
@@ -248,5 +248,11 @@
     "commitName": "tddlog no conflicts, commit history needs the implementation",
     "commitTimestamp": 1763638662815,
     "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b1"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "cambios en attributes",
+    "commitTimestamp": 1763841751565,
+    "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b11"
   }
 ]
