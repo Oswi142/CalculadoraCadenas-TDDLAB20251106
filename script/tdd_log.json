@@ -268,5 +268,14 @@
     "commitName": "tests branch 1",
     "commitTimestamp": 1763842021441,
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb5"
+    "timestamp": 1763842054125,
+    "success": true,
+    "testId": "496a9dd2-8b45-4caf-9901-e8bde89224ae"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "branch 2 tests",
+    "commitTimestamp": 1763842079481,
+    "testId": "496a9dd2-8b45-4caf-9901-e8bde89224ae"
   }
 ]
