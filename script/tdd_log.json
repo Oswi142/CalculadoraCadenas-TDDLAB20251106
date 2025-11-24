@@ -60,9 +60,15 @@
     "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b11"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "dbeb1547a9c265f8dd012be3833e67326e90c00b",
     "commitName": "format of file commit-history to ndjson",
     "commitTimestamp": 1763953972083,
     "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b111"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "changed uploaded to ndjson",
+    "commitTimestamp": 1763954594600,
+    "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b1111"
   }
 ]

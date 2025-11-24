@@ -8,9 +8,9 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DATA_FILE = path.join(__dirname, "commit-history.json");
+const DATA_FILE = path.join(__dirname, "commit-history.ndjson");
 // Ruta relativa usada en comandos git para excluir el archivo
-const GIT_EXCLUDE_PATH = "script/commit-history.json";
+const GIT_EXCLUDE_PATH = "script/commit-history.ndjson";
 
 function getCommitInfo(sha) {
   let commitMessage, commitDate, author;
