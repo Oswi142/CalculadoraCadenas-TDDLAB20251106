@@ -1,8 +1,22 @@
 [
   {
-    "commitId": "HEAD",
+    "commitId": "db96b7064cf1d50a3fb9690e63d0d0508115f16d",
     "commitName": "merge conflict solved, reports deleted to try a new methodology",
     "commitTimestamp": 1763951925882,
     "testId": 0
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763951986929,
+    "success": true,
+    "testId": "3228941b-94c8-4a45-b941-13f691616659"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test branch one",
+    "commitTimestamp": 1763952006263,
+    "testId": "3228941b-94c8-4a45-b941-13f691616659"
   }
 ]
