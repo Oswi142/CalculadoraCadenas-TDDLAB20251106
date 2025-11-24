@@ -63,12 +63,6 @@
       "date": "2025-11-24T02:43:02.000Z",
       "message": "test2",
       "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/bf749a9144be4c16a1f183a23891ceb4d2dfbfc0"
-    "sha": "2074d9bf91df696a29e60b70ea00eae965c2dec8",
-    "author": "Oswi",
-    "commit": {
-      "date": "2025-11-24T02:42:38.000Z",
-      "message": "test1",
-      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/2074d9bf91df696a29e60b70ea00eae965c2dec8"
     },
     "stats": {
       "total": 0,
@@ -81,4 +75,4 @@
     "failed_tests": 0,
     "conclusion": "success"
   }
-]
+]{"sha":"9a5f6d3073c930561bf9b4567b18c7f71efc03a1","branch":"main","author":"Oswi","commit":{"date":"2025-11-24T03:08:58.000Z","message":"added ndjson for the new format of commit reports","url":"https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/9a5f6d3073c930561bf9b4567b18c7f71efc03a1"},"stats":{"total":44,"additions":21,"deletions":23,"date":"2025-11-24"},"coverage":100,"test_count":6,"failed_tests":0,"conclusion":"success"}

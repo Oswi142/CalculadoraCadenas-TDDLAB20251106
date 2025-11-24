@@ -6,6 +6,8 @@ script/tdd_log.json -diff
 script/commit-history.json linguist-generated=true
 script/tdd_log.json linguist-generated=true
 
-# Unir contenido de todas las ramas (logs append-only)
-script/tdd_log.json merge=union
+# Unir contenido de todas las ramas (logs append-only, formato NDJSON)
 script/commit-history.json merge=union
+
+# tdd_log: seguir uniendo contenido de todas las ramas (JSON normal, append-only)
+script/tdd_log.json merge=union

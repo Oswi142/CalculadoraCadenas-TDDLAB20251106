@@ -42,18 +42,15 @@
     "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "aba7015fdd2689d6c234b66cd6894804c70c90dd",
     "commitName": "test2",
     "commitTimestamp": 1763952184096,
     "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b"
-    "timestamp": 1763952137509,
-    "success": true,
-    "testId": "3a2b689c-cdfd-4a8a-8692-5b3fb262c331"
   },
   {
     "commitId": "HEAD",
-    "commitName": "test1",
-    "commitTimestamp": 1763952159706,
-    "testId": "3a2b689c-cdfd-4a8a-8692-5b3fb262c331"
+    "commitName": "added ndjson for the new format of commit reports",
+    "commitTimestamp": 1763953740869,
+    "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b1"
   }
 ]

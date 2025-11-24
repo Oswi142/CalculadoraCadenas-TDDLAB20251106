@@ -31,6 +31,14 @@ function getCommitInfo(sha) {
     return null;
   }
 
+  // Nombre de la rama (para saber de dónde viene el commit)
+  let branch = "";
+  try {
+    branch = execSync("git rev-parse --abbrev-ref HEAD").toString().trim();
+  } catch {
+    branch = "";
+  }
+
   let repoUrl = "";
   try {
     repoUrl = execSync("git config --get remote.origin.url")
@@ -193,6 +201,7 @@ function getCommitInfo(sha) {
 
   return {
     sha: sha,
+    branch, // de qué rama viene este commit
     author,
     commit: {
       date: commitDate,
@@ -212,36 +221,23 @@ function getCommitInfo(sha) {
   };
 }
 
-// 🔴 AQUÍ VIENE LA PARTE IMPORTANTE:
-//     Solo agregamos objetos al final (append-only)
+// 🔴 IMPORTANTE: formato NDJSON, append-only
 function saveCommitData(commitData) {
   if (!commitData || !commitData.sha) return;
 
-  let commits = [];
-  if (fs.existsSync(DATA_FILE)) {
-    try {
-      commits = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
-      if (!Array.isArray(commits)) {
-        commits = [];
-      }
-    } catch (error) {
-      console.error("Error al leer el archivo de datos, se reinicia:", error);
-      commits = [];
-    }
+  // Aseguramos que el archivo exista
+  if (!fs.existsSync(DATA_FILE)) {
+    fs.writeFileSync(DATA_FILE, "");
   }
 
-  // - NO buscamos por sha
-  // - NO actualizamos objetos anteriores
-  // - NO ordenamos
-  // - Solo agregamos el nuevo commit al final del array
-  commits.push(commitData);
-
-  fs.writeFileSync(DATA_FILE, JSON.stringify(commits, null, 2));
+  const line = JSON.stringify(commitData);
+  fs.appendFileSync(DATA_FILE, line + "\n");
 }
 
 try {
+  // Crear archivo vacío si no existe (NDJSON)
   if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify([], null, 2));
+    fs.writeFileSync(DATA_FILE, "");
   }
 
   // Obtener SHA real del HEAD actual
