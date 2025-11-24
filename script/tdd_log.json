@@ -48,9 +48,15 @@
     "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "d275526cb3eb92dbc7b60aa88233ead830f36a01",
     "commitName": "added ndjson for the new format of commit reports",
     "commitTimestamp": 1763953740869,
     "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b1"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "deleted old data in commit history",
+    "commitTimestamp": 1763953810647,
+    "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b11"
   }
 ]
