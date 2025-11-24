@@ -63,6 +63,12 @@
       "date": "2025-11-24T00:21:46.000Z",
       "message": "Quitando HEAD y ordenando por fecha",
       "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/e828d5fa3aeb2a0a7ddd7cd159d73832dc5be454"
+    "sha": "68cc7f27b3307c63028353bb078aa42499f52af1",
+    "author": "Oswi",
+    "commit": {
+      "date": "2025-11-24T00:24:29.000Z",
+      "message": "prueba en test-1",
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/68cc7f27b3307c63028353bb078aa42499f52af1"
     },
     "stats": {
       "total": 146,
@@ -87,6 +93,25 @@
       "total": 7,
       "additions": 5,
       "deletions": 2,
+      "date": "2025-11-24"
+    },
+    "coverage": 100,
+    "test_count": 6,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Oswi",
+    "commit": {
+      "date": "2025-11-24T01:52:08.000Z",
+      "message": "test rama 1",
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
       "date": "2025-11-24"
     },
     "coverage": 100,

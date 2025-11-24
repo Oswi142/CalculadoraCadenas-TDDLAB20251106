@@ -267,6 +267,9 @@
     "commitId": "495be64d46043a575f9f8e0babc53d776fff6775",
     "commitName": "Quitando HEAD y ordenando por fecha",
     "commitTimestamp": 1763943709585,
+    "commitId": "68cc7f27b3307c63028353bb078aa42499f52af1",
+    "commitName": "tests branch 1",
+    "commitTimestamp": 1763842021441,
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb5"
   },
   {
@@ -280,5 +283,17 @@
     "commitName": "tests for the conflict",
     "commitTimestamp": 1763948119496,
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb511"
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763949083745,
+    "success": true,
+    "testId": "1e6e5b85-30ff-4aec-b395-75bf827ad9e3"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test rama 1",
+    "commitTimestamp": 1763949129530,
+    "testId": "1e6e5b85-30ff-4aec-b395-75bf827ad9e3"
   }
 ]
