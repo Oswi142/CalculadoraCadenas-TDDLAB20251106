@@ -122,7 +122,11 @@ function getCommitInfo(sha) {
 
   let conclusion = "neutral"; // valor por defecto
 
-  if (fs.existsSync(path.join(__dirname, "..", "package.json")) || fs.existsSync(path.join(__dirname, "..", "src"))) {
+  // Solo intentamos correr Jest si parece un repo de JS/TS
+  if (
+    fs.existsSync(path.join(__dirname, "..", "package.json")) ||
+    fs.existsSync(path.join(__dirname, "..", "src"))
+  ) {
     const tempDir = tmpdir();
     const randomId = crypto.randomBytes(8).toString("hex");
     const outputPath = path.join(tempDir, `jest-results-${randomId}.json`);
@@ -136,7 +140,8 @@ function getCommitInfo(sha) {
           }
         );
       } catch (jestError) {
-        // jest puede devolver código de salida distinto a 0 si hay fallos, pero aún así producirá el archivo
+        // jest puede devolver código de salida distinto a 0 si hay fallos,
+        // pero aún así producirá el archivo
       }
 
       // Procesar los resultados si el archivo existe
@@ -207,40 +212,29 @@ function getCommitInfo(sha) {
   };
 }
 
+// 🔴 AQUÍ VIENE LA PARTE IMPORTANTE:
+//     Solo agregamos objetos al final (append-only)
 function saveCommitData(commitData) {
+  if (!commitData || !commitData.sha) return;
+
   let commits = [];
   if (fs.existsSync(DATA_FILE)) {
     try {
       commits = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
+      if (!Array.isArray(commits)) {
+        commits = [];
+      }
     } catch (error) {
-      console.error("Error al leer el archivo de datos:", error);
+      console.error("Error al leer el archivo de datos, se reinicia:", error);
       commits = [];
     }
   }
 
-  if (!commitData || !commitData.sha) return;
-
-  // Actualizar si existe el mismo SHA, sino agregar
-  const existingIndex = commits.findIndex((c) => c.sha === commitData.sha);
-  if (existingIndex >= 0) {
-    commits[existingIndex] = commitData;
-  } else {
-    commits.push(commitData);
-  }
-
-  // Actualizar URLs para commits que no la tengan si tenemos una URL base
-  if (commitData.commit && commitData.commit.url) {
-    const baseUrl = commitData.commit.url.split("/commit/")[0];
-    commits.forEach((commit) => {
-      if ((!commit.commit || !commit.commit.url) && commit.sha) {
-        if (!commit.commit) commit.commit = {};
-        commit.commit.url = `${baseUrl}/commit/${commit.sha}`;
-      }
-    });
-  }
-
-  // Ordenar commits por fecha ascendente (más reciente al final)
-  commits.sort((a, b) => new Date(a.commit.date) - new Date(b.commit.date));
+  // - NO buscamos por sha
+  // - NO actualizamos objetos anteriores
+  // - NO ordenamos
+  // - Solo agregamos el nuevo commit al final del array
+  commits.push(commitData);
 
   fs.writeFileSync(DATA_FILE, JSON.stringify(commits, null, 2));
 }
