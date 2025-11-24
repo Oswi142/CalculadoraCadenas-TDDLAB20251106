@@ -250,7 +250,7 @@
     "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b1"
   },
   {
-    "commitId": "907bf72b1306115c3f6d3fcb7ce0e89434eb0795",
+    "commitId": "2a8bc97441db24f867997d983436ffabc4cca0c9",
     "commitName": "cambios en attributes",
     "commitTimestamp": 1763841751565,
     "testId": "11700829-25c9-41fa-8b53-0adc0da16e4b11"
@@ -264,9 +264,21 @@
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb5"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "495be64d46043a575f9f8e0babc53d776fff6775",
     "commitName": "Quitando HEAD y ordenando por fecha",
     "commitTimestamp": 1763943709585,
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb5"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "prueba en test-1",
+    "commitTimestamp": 1763943871188,
+    "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb51"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "tests for the conflict",
+    "commitTimestamp": 1763948119496,
+    "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb511"
   }
 ]

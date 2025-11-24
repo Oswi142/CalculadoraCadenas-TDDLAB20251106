@@ -9,5 +9,5 @@ script/tdd_log.json linguist-generated=true
 # tdd_log: unir contenido de todas las ramas
 script/tdd_log.json merge=union
 
-# commit-history: evitar conflictos y JSON roto
-script/commit-history.json merge=ours
+# commit-history: unir contenido de todas las ramas
+script/commit-history.json merge=union
