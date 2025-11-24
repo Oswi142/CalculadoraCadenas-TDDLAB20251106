@@ -28,9 +28,23 @@
     "testId": "1382a2bf-e7e5-41ab-b2ae-bd357bb8348d"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "c94c55ee7fc2847dc29cf32dfba98889a03a0ccd",
     "commitName": "test branch two",
     "commitTimestamp": 1763952078785,
     "testId": "1382a2bf-e7e5-41ab-b2ae-bd357bb8348d"
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763952175732,
+    "success": true,
+    "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test2",
+    "commitTimestamp": 1763952184096,
+    "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b"
   }
 ]

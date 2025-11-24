@@ -55,5 +55,24 @@
     "test_count": 6,
     "failed_tests": 0,
     "conclusion": "success"
+  },
+  {
+    "sha": "bf749a9144be4c16a1f183a23891ceb4d2dfbfc0",
+    "author": "Oswi",
+    "commit": {
+      "date": "2025-11-24T02:43:02.000Z",
+      "message": "test2",
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/bf749a9144be4c16a1f183a23891ceb4d2dfbfc0"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
+      "date": "2025-11-24"
+    },
+    "coverage": 100,
+    "test_count": 6,
+    "failed_tests": 0,
+    "conclusion": "success"
   }
 ]
