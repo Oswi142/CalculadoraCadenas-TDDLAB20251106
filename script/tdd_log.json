@@ -296,7 +296,7 @@
     "testId": "fa018195-4ba9-4392-89a4-056048560c52"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "f974a23e7eadf23403c7944bbe752454626efa20",
     "commitName": "test branch 1",
     "commitTimestamp": 1763949785562,
     "testId": "fa018195-4ba9-4392-89a4-056048560c52"
@@ -306,5 +306,19 @@
     "commitName": "resolving conflicts of merge",
     "commitTimestamp": 1763949935874,
     "testId": "fa018195-4ba9-4392-89a4-056048560c521"
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763949985861,
+    "success": true,
+    "testId": "6bcb38ba-4fdd-462e-a728-e94436bceb1a"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test branch 2",
+    "commitTimestamp": 1763950005573,
+    "testId": "6bcb38ba-4fdd-462e-a728-e94436bceb1a"
   }
 ]
