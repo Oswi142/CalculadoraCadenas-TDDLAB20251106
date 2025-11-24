@@ -84,5 +84,14 @@
     "commitName": "test 1",
     "commitTimestamp": 1763954668127,
     "testId": "acf04f87-ecb4-4983-a46d-c70250470fce"
+    "timestamp": 1763954708063,
+    "success": true,
+    "testId": "c435d8d5-d951-429f-aa15-fda744fb162f"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test 2",
+    "commitTimestamp": 1763954722814,
+    "testId": "c435d8d5-d951-429f-aa15-fda744fb162f"
   }
 ]
