@@ -316,7 +316,7 @@
     "testId": "6bcb38ba-4fdd-462e-a728-e94436bceb1a"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "38e16a554ed4a9a320bea4a4d70ae29869ff5010",
     "commitName": "test branch 2",
     "commitTimestamp": 1763950005573,
     "testId": "6bcb38ba-4fdd-462e-a728-e94436bceb1a"
@@ -334,5 +334,11 @@
     "commitName": "test branch 2.1",
     "commitTimestamp": 1763950186737,
     "testId": "adb3a07f-6d19-47b3-a877-43ce80f7cfbc"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "branches conflict solved",
+    "commitTimestamp": 1763950325781,
+    "testId": "adb3a07f-6d19-47b3-a877-43ce80f7cfbc1"
   }
 ]
