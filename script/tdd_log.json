@@ -54,9 +54,15 @@
     "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b1"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "27e0af32a89a258c7fb6d663538092bd1040c969",
     "commitName": "deleted old data in commit history",
     "commitTimestamp": 1763953810647,
     "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b11"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "format of file commit-history to ndjson",
+    "commitTimestamp": 1763953972083,
+    "testId": "0ea81e46-ec79-40c9-91db-00ae07dd5e3b111"
   }
 ]
