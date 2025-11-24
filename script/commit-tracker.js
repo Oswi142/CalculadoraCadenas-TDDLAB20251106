@@ -1,16 +1,20 @@
 import fs from "fs";
-import { execSync, exec } from "child_process";
+import { execSync } from "child_process";
 import { tmpdir } from "os";
 import path from "path";
 import crypto from "crypto";
+import { fileURLToPath } from "url";
 
-const DATA_FILE = "script/commit-history.json";
-const HEAD_MARKER = "HEAD";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const DATA_FILE = path.join(__dirname, "commit-history.json");
+// Ruta relativa usada en comandos git para excluir el archivo
+const GIT_EXCLUDE_PATH = "script/commit-history.json";
 
 function getCommitInfo(sha) {
   let commitMessage, commitDate, author;
-  const isHeadCommit = sha === HEAD_MARKER;
-  const gitSha = isHeadCommit ? "HEAD" : sha;
+  const gitSha = sha;
 
   try {
     commitMessage = execSync(`git log -1 --pretty=%B ${gitSha}`)
@@ -46,52 +50,64 @@ function getCommitInfo(sha) {
   try {
     // Obtener el parent del commit actual para comparar
     let parentRef;
-    const isMergeCommit = commitMessage.startsWith("Merge ");
-
-    if (isMergeCommit) {
-      // Para commits de merge, usar el primer parent
-      try {
-        parentRef = execSync(`git log -1 --pretty=%P ${gitSha}`)
-          .toString()
-          .trim()
-          .split(" ")[0];
-      } catch (error) {
-        parentRef = `${gitSha}~1`;
+    try {
+      const parents = execSync(`git log -1 --pretty=%P ${gitSha}`)
+        .toString()
+        .trim();
+      if (parents) {
+        parentRef = parents.split(" ")[0];
+      } else {
+        parentRef = null;
       }
-    } else {
-      // Para commits normales
-      parentRef = `${gitSha}~1`;
+    } catch (error) {
+      parentRef = null;
     }
 
     try {
-      // Excluir commit-history.json al obtener las estadísticas del diff
-      const diffStats = execSync(
-        `git diff --stat ${parentRef} ${gitSha} -- ":!${DATA_FILE}"`
-      ).toString();
-      const additionsMatch = diffStats.match(/(\d+) insertion/);
-      const deletionsMatch = diffStats.match(/(\d+) deletion/);
-      additions = additionsMatch ? parseInt(additionsMatch[1]) : 0;
-      deletions = deletionsMatch ? parseInt(deletionsMatch[1]) : 0;
+      // Usar --numstat para obtener números fiables de adiciones/eliminaciones
+      if (parentRef) {
+        const diffOutput = execSync(
+          `git diff --numstat ${parentRef} ${gitSha} -- ":!${GIT_EXCLUDE_PATH}"`
+        )
+          .toString()
+          .trim();
+        if (diffOutput) {
+          const lines = diffOutput.split(/\r?\n/);
+          for (const line of lines) {
+            const parts = line.split(/\t+/);
+            if (parts.length >= 2) {
+              const a = parts[0] === "-" ? 0 : parseInt(parts[0], 10) || 0;
+              const d = parts[1] === "-" ? 0 : parseInt(parts[1], 10) || 0;
+              additions += a;
+              deletions += d;
+            }
+          }
+        }
+      } else {
+        // Primer commit: usar git show --numstat
+        const showOutput = execSync(
+          `git show --numstat ${gitSha} -- ":!${GIT_EXCLUDE_PATH}"`
+        )
+          .toString()
+          .trim();
+        if (showOutput) {
+          const lines = showOutput.split(/\r?\n/);
+          for (const line of lines) {
+            const parts = line.split(/\t+/);
+            if (parts.length >= 2 && /^\d/.test(parts[0])) {
+              const a = parts[0] === "-" ? 0 : parseInt(parts[0], 10) || 0;
+              const d = parts[1] === "-" ? 0 : parseInt(parts[1], 10) || 0;
+              additions += a;
+              deletions += d;
+            }
+          }
+        }
+      }
     } catch (error) {
       console.warn(
-        `Error al obtener estadísticas del diff para ${gitSha}, puede ser el primer commit:`,
+        `Error al obtener estadísticas del diff para ${gitSha}:`,
         error.message
       );
-
-      // Si es el primer commit, no hay parent para comparar
-      try {
-        const diffStats = execSync(
-          `git show --stat ${gitSha} -- ":!${DATA_FILE}"`
-        ).toString();
-        const additionsMatch = diffStats.match(/(\d+) insertion/);
-        additions = additionsMatch ? parseInt(additionsMatch[1]) : 0;
-        deletions = 0; // En el primer commit no hay eliminaciones
-      } catch (innerError) {
-        console.warn(
-          `Error al obtener estadísticas para el primer commit:`,
-          innerError.message
-        );
-      }
     }
   } catch (error) {
     console.warn(
@@ -106,7 +122,7 @@ function getCommitInfo(sha) {
 
   let conclusion = "neutral"; // valor por defecto
 
-  if (fs.existsSync("package.json")) {
+  if (fs.existsSync(path.join(__dirname, "..", "package.json")) || fs.existsSync(path.join(__dirname, "..", "src"))) {
     const tempDir = tmpdir();
     const randomId = crypto.randomBytes(8).toString("hex");
     const outputPath = path.join(tempDir, `jest-results-${randomId}.json`);
@@ -119,7 +135,9 @@ function getCommitInfo(sha) {
             stdio: "pipe",
           }
         );
-      } catch (jestError) {}
+      } catch (jestError) {
+        // jest puede devolver código de salida distinto a 0 si hay fallos, pero aún así producirá el archivo
+      }
 
       // Procesar los resultados si el archivo existe
       if (fs.existsSync(outputPath)) {
@@ -169,14 +187,12 @@ function getCommitInfo(sha) {
   }
 
   return {
-    sha: isHeadCommit ? HEAD_MARKER : sha,
+    sha: sha,
     author,
     commit: {
       date: commitDate,
       message: commitMessage,
-      url: !isHeadCommit
-        ? `${repoUrl}/commit/HEAD`
-        : `${repoUrl}/commit/${sha}`,
+      url: repoUrl ? `${repoUrl}/commit/${sha}` : undefined,
     },
     stats: {
       total: additions + deletions,
@@ -202,41 +218,28 @@ function saveCommitData(commitData) {
     }
   }
 
-  // Actualizar el commit HEAD anterior con su SHA real
-  const headIndex = commits.findIndex((c) => c.sha === HEAD_MARKER);
-  if (headIndex >= 0) {
-    // Obtener el SHA del commit anterior (que antes era HEAD)
-    const currentSha = execSync("git rev-parse HEAD~1").toString().trim();
+  if (!commitData || !commitData.sha) return;
 
-    // Actualizar el registro con el SHA real
-    commits[headIndex].sha = currentSha;
-    if (commits[headIndex].commit.url && currentSha) {
-      const baseUrl = commits[headIndex].commit.url.split("/commit/")[0];
-      commits[headIndex].commit.url = `${baseUrl}/commit/${currentSha}`;
-    }
-  }
-
-  // Actualizar o agregar el commit actual (HEAD)
+  // Actualizar si existe el mismo SHA, sino agregar
   const existingIndex = commits.findIndex((c) => c.sha === commitData.sha);
-  if (existingIndex >= 0 && commitData.sha !== HEAD_MARKER) {
-    // Actualizar commit existente
+  if (existingIndex >= 0) {
     commits[existingIndex] = commitData;
   } else {
-    // Agregar el nuevo commit HEAD
     commits.push(commitData);
   }
 
   // Actualizar URLs para commits que no la tengan si tenemos una URL base
-  if (commitData.commit.url) {
+  if (commitData.commit && commitData.commit.url) {
     const baseUrl = commitData.commit.url.split("/commit/")[0];
     commits.forEach((commit) => {
-      if (!commit.commit.url && commit.sha !== HEAD_MARKER) {
+      if ((!commit.commit || !commit.commit.url) && commit.sha) {
+        if (!commit.commit) commit.commit = {};
         commit.commit.url = `${baseUrl}/commit/${commit.sha}`;
       }
     });
   }
 
-  // Ordenar commits por fecha
+  // Ordenar commits por fecha ascendente (más reciente al final)
   commits.sort((a, b) => new Date(a.commit.date) - new Date(b.commit.date));
 
   fs.writeFileSync(DATA_FILE, JSON.stringify(commits, null, 2));
@@ -247,8 +250,9 @@ try {
     fs.writeFileSync(DATA_FILE, JSON.stringify([], null, 2));
   }
 
-  // Obtener información del commit actual como HEAD
-  const currentCommitData = getCommitInfo(HEAD_MARKER);
+  // Obtener SHA real del HEAD actual
+  const currentSha = execSync("git rev-parse HEAD").toString().trim();
+  const currentCommitData = getCommitInfo(currentSha);
   if (currentCommitData) {
     saveCommitData(currentCommitData);
   }
