@@ -270,9 +270,31 @@
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb5"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "2a10ec1ff894ea9bdf62b6aed7306359b5d67a48",
     "commitName": "prueba en test-2",
     "commitTimestamp": 1763943816013,
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb51"
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763949165393,
+    "success": true,
+    "testId": "bde72d4d-0aec-4cf6-a42b-9c52357011c1"
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763949179691,
+    "success": true,
+    "testId": "32255c16-011a-42df-aa12-8602dbfd705b"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test rama 2",
+    "commitTimestamp": 1763949232072,
+    "testId": "32255c16-011a-42df-aa12-8602dbfd705b"
   }
 ]
