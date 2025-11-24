@@ -296,7 +296,7 @@
     "testId": "fa018195-4ba9-4392-89a4-056048560c52"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "c76b08bd5baa89e020d7ef4ca1ff8fda8d9da585",
     "commitName": "test branch 1",
     "commitTimestamp": 1763949785562,
     "testId": "fa018195-4ba9-4392-89a4-056048560c52"
@@ -314,5 +314,19 @@
     "commitName": "test branch 1.1",
     "commitTimestamp": 1763950111070,
     "testId": "3a910e7e-d5e3-4d91-93ee-e83eb35b98aa"
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 0,
+    "numTotalTests": 6,
+    "timestamp": 1763950624292,
+    "success": true,
+    "testId": "52f9831c-edab-4246-bf16-c500041ed452"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "pruebas rama 1",
+    "commitTimestamp": 1763950642558,
+    "testId": "52f9831c-edab-4246-bf16-c500041ed452"
   }
 ]

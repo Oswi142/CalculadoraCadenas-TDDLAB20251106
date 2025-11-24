@@ -150,5 +150,24 @@
     "test_count": 6,
     "failed_tests": 0,
     "conclusion": "success"
+  },
+  {
+    "sha": "6939e773f3ba577ad6cd662d293c3d23e9294765",
+    "author": "Oswi",
+    "commit": {
+      "date": "2025-11-24T02:17:21.000Z",
+      "message": "pruebas rama 1",
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/6939e773f3ba577ad6cd662d293c3d23e9294765"
+    },
+    "stats": {
+      "total": 0,
+      "additions": 0,
+      "deletions": 0,
+      "date": "2025-11-24"
+    },
+    "coverage": 100,
+    "test_count": 6,
+    "failed_tests": 0,
+    "conclusion": "success"
   }
 ]
