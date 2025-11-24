@@ -282,7 +282,7 @@
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb511"
   },
   {
-    "commitId": "HEAD",
+    "commitId": "1f1062e63ca937a72f0d7d5d6196fddb75ea5657",
     "commitName": "gitattributes updated",
     "commitTimestamp": 1763949694436,
     "testId": "43525fe1-530d-4f38-af1b-5f29c1bd7cb5111"
@@ -300,5 +300,11 @@
     "commitName": "test branch 1",
     "commitTimestamp": 1763949785562,
     "testId": "fa018195-4ba9-4392-89a4-056048560c52"
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "resolving conflicts of merge",
+    "commitTimestamp": 1763949935874,
+    "testId": "fa018195-4ba9-4392-89a4-056048560c521"
   }
 ]
