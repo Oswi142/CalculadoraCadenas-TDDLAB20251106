@@ -6,8 +6,8 @@ script/tdd_log.json -diff
 script/commit-history.json linguist-generated=true
 script/tdd_log.json linguist-generated=true
 
-# tdd_log: unir contenido de todas las ramas
+# tdd_log: unir contenido de todas las ramas (OK porque solo se agregan objetos)
 script/tdd_log.json merge=union
 
-# commit-history: unir contenido de todas las ramas
-script/commit-history.json merge=union
+# commit-history: NO unir línea por línea, quedarse con la versión de la rama donde merges
+script/commit-history.json merge=ours
