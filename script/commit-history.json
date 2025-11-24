@@ -38,18 +38,37 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "2a8bc97441db24f867997d983436ffabc4cca0c9",
     "author": "Oswi",
     "commit": {
       "date": "2025-11-22T20:06:58.000Z",
       "message": "tests branch 1",
-      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/2a8bc97441db24f867997d983436ffabc4cca0c9"
     },
     "stats": {
       "total": 0,
       "additions": 0,
       "deletions": 0,
       "date": "2025-11-22"
+    },
+    "coverage": 100,
+    "test_count": 6,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Oswi",
+    "commit": {
+      "date": "2025-11-24T00:24:29.000Z",
+      "message": "prueba en test-1",
+      "url": "https://github.com/Oswi142/CalculadoraCadenas-TDDLAB20251106/commit/HEAD"
+    },
+    "stats": {
+      "total": 3,
+      "additions": 3,
+      "deletions": 0,
+      "date": "2025-11-24"
     },
     "coverage": 100,
     "test_count": 6,
