@@ -1,11 +1,11 @@
 # Desactivar el diff de estos logs
 script/commit-history.ndjson -diff
-script/tdd_log.json -diff
+script/tdd_log.ndjson -diff
 
 # Para que GitHub los colapse como archivos generados
 script/commit-history.ndjson linguist-generated=true
-script/tdd_log.json linguist-generated=true
+script/tdd_log.ndjson linguist-generated=true
 
-# Unir contenido de todas las ramas (append-only, no conflictos)
+# Unir contenido de todas las ramas (append-only, sin conflictos)
 script/commit-history.ndjson merge=union
-script/tdd_log.json merge=union
+script/tdd_log.ndjson merge=union

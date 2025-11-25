@@ -8,57 +8,37 @@ const COMMAND = 'jest';
 const args = ['--json', '--outputFile=./script/report.json'];
 
 function runCommand(command, args) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const process = spawn(command, args, { stdio: 'inherit' });
-    process.on('close', (code) => {
-      resolve();
-    });
+    process.on('close', () => resolve());
   });
 }
 
-const readJSONFile = (filePath) => {
-  const rawData = fs.readFileSync(filePath, 'utf-8');
-  return JSON.parse(rawData);
-};
-
-const writeJSONFile = (filePath, data) => {
-  const jsonString = JSON.stringify(data, null, 2);
-  fs.writeFileSync(filePath, jsonString, 'utf-8');
-};
-
-const ensureFileExists = (filePath, initialData) => {
+function ensureNDJSON(filePath) {
   if (!fs.existsSync(filePath)) {
-    writeJSONFile(filePath, initialData);
+    fs.writeFileSync(filePath, '');
   }
-};
+}
 
 const extractAndAddObject = async (reportFile, tddLogFile) => {
   try {
     await runCommand(COMMAND, args);
 
-    ensureFileExists(tddLogFile, []);
+    ensureNDJSON(tddLogFile);
 
-    const jsonData = readJSONFile(reportFile);
-    const passedTests = jsonData.numPassedTests;
-    const failedTests = jsonData.numFailedTests;
-    const totalTests = jsonData.numTotalTests;
-    const startTime = jsonData.startTime;
-    const success = jsonData.success;
-    const testId = uuid();
+    const jsonData = JSON.parse(fs.readFileSync(reportFile, 'utf-8'));
 
     const newReport = {
-      numPassedTests: passedTests,
-      failedTests: failedTests,
-      numTotalTests: totalTests,
-      timestamp: startTime,
-      success: success,
-      testId: testId
+      numPassedTests: jsonData.numPassedTests,
+      failedTests: jsonData.numFailedTests,
+      numTotalTests: jsonData.numTotalTests,
+      timestamp: jsonData.startTime,
+      success: jsonData.success,
+      testId: uuid()
     };
 
-    const tddLog = readJSONFile(tddLogFile);
-    tddLog.push(newReport);
+    fs.appendFileSync(tddLogFile, JSON.stringify(newReport) + '\n');
 
-    writeJSONFile(tddLogFile, tddLog);
   } catch (error) {
     console.error('Error en la ejecución:', error);
   }
@@ -68,7 +48,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const inputFilePath = path.join(__dirname, 'report.json');
-const outputFilePath = path.join(__dirname, 'tdd_log.json');
+const outputFilePath = path.join(__dirname, 'tdd_log.ndjson');
 
 extractAndAddObject(inputFilePath, outputFilePath);
 
