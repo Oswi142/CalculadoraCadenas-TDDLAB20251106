@@ -1,8 +1,0 @@
-[
-  {
-    "commitId": "HEAD",
-    "commitName": "Migrate tdd_log to NDJSON format",
-    "commitTimestamp": 1764044773950,
-    "testId": 0
-  }
-]
